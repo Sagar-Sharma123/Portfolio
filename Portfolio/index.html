@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+</head>
+
+<style>
+    * {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: large;
+    }
+
+    body {
+        /* background-color: aqua; */
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul li {
+        margin-right: 10%;
+        margin-top: 2.5%;
+    }
+
+    .left_nav h3 {
+        margin-right: 25%;
+    }
+
+    .left_nav {
+        align-items: center;
+        /* border: 1px solid black; */
+    }
+
+    /* .left_nav button{
+        padding: 0px;
+    } */
+    #btn {
+        border-radius: 50px;
+        padding: 5px 20px;
+        background-color: orange;
+        color: white;
+        border: none;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    #contact {
+        border-radius: 50px;
+        padding: 5px 20px;
+        background-color: orange;
+        color: white;
+        border: none;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    #btn1 {
+        border-radius: 25px;
+        padding: auto;
+        /* border: none;
+        background-color: orange; */
+    }
+
+    #flexSwitchCheckDefault {
+        height: 25px;
+        width: 45px;
+    }
+
+    .nav {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid black; */
+    }
+
+    .right_nav {
+        /* border: 1px solid black; */
+        align-items: center;
+    }
+
+    .right_nav ul li {
+        font-weight: 500;
+    }
+
+    .form-check {
+        margin-bottom: 0.5rem;
+    }
+
+    #btn3 {
+        border-radius: 50px;
+        padding: 5px 20px;
+        background-color: orange;
+        color: white;
+        border: none;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .image {
+        /* border-radius: 50%; */
+        background-color: orange;
+        height: 320px;
+        border-radius: 50%;
+        width: 340px;
+    }
+
+    .icon_list {
+        display: flex;
+        list-style-type: none;
+    }
+
+    .icon_list li {
+        margin-right: 30%;
+        color: orange;
+    }
+
+    .icon_list li a:hover {
+        color: orange;
+    }
+
+    .icon_list li a {
+        height: 100px;
+    }
+
+    .icn {
+        align-items: center;
+        display: flex;
+        align-items: center;
+        margin-top: 2%;
+    }
+
+    .toggle-btn {
+        background: rgb(7, 193, 193);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-btn img {
+        width: 20px;
+        margin-left: 10px;
+    }
+
+    .dark-mode {
+        background-color: black;
+        color: white;
+    }
+
+    .badge {
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .br {
+        border-bottom-left-radius: 34% 81px;
+        border-bottom-right-radius: 55% 214px;
+    }
+
+    #info {
+        height: 630px;
+        padding: 100px 60px;
+    }
+
+    .card {
+        margin: 50px;
+    }
+
+    .card-style {
+        width: 17%;
+    }
+
+    .container2 {
+        display: flex;
+        height: 500px;
+        padding: 60px;
+    }
+
+    .hii {
+        font-size: 48px;
+    }
+
+    .name {
+        font-size: 48px;
+        color: orange;
+    }
+
+    .me-4 {
+        font-size: 22px;
+    }
+
+    .hire {
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 80px;
+        padding: 10px 35px;
+        /* width: 90px; */
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
+        font-size: medium;
+    }
+
+    .inner_box {
+        padding: 40px;
+    }
+
+    .image1 {
+        width: 430px;
+        height: 350px;
+        ;
+    }
+
+    .container1 {
+        /* background-color: black;
+    color:white; */
+        width: 100%;
+        height: 550px;
+        padding: 60px;
+    }
+
+
+    .box {
+        /* width: 360px; */
+        width: 40%;
+        /* height: 185px; */
+        text-align: center;
+        background-color: black;
+        border: 5px solid;
+        border-color: orange;
+        margin: 130px auto;
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .image2 {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+    }
+
+    h5 {
+        color: orange;
+        /* font-size: 15px; */
+    }
+
+    h6 {
+        color: orange;
+    }
+
+    .visit {
+        width: 70px;
+        /* padding: 10px; */
+        border-radius: 20px;
+        border: none;
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+
+    #services {
+        /* background-color: black;
+    color:white; */
+        display: flex;
+        height: 820px;
+        padding: 60px;
+    }
+
+    .face_img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    /* span {
+        color: orange
+    } */
+
+    .box2 {
+        background-color: white;
+        color: black;
+        padding: 18px;
+        border-radius: 10px;
+    }
+
+    .Cv {
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 40px;
+        padding: 10px 25px;
+        /* width: 120px; */
+    }
+
+    .box3,
+    .box4,
+    .box5 {
+        text-align: center;
+        margin: 10px;
+        /* margin-top: 10%; */
+    }
+
+    .box3 {
+        position: relative;
+        top: 190px;
+        right: 220px;
+    }
+
+    #project {
+        padding: 60px;
+    }
+
+    .box5 {
+        position: relative;
+        top: 425px;
+        right: 290px;
+    }
+
+    .box4 {
+        position: relative;
+        top: 35px;
+        right: 40px;
+    }
+
+    .learn {
+        color: blue;
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+        margin-top: 15px;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
+        font-size: medium;
+    }
+
+    .awesome {
+        font-size: 40px;
+    }
+
+    .image3 {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+        color: black;
+        padding: 15px;
+        font-size: 21px;
+        color: orange;
+        font-weight: bold;
+
+    }
+
+    #main_container {
+        width: 100%;
+        height: 200px;
+    }
+
+    .experience {
+        margin-top: 22px;
+        color: black;
+    }
+
+    .main {
+        text-align: center;
+        /* background-color: black;
+    color:white; */
+        margin: auto;
+        width: 450px;
+        display: flex;
+        gap: 45px;
+    }
+
+    p {
+        font-size: 20px
+    }
+
+    .nav_head {
+        color: red;
+    }
+
+    .social-icon {
+        font-size: 40px;
+        margin: 8px;
+
+    }
+
+    .social-icon:hover {
+        color: white;
+    }
+
+    .div1:hover {
+        bottom: 20px;
+    }
+
+    .btn12 {
+        box-shadow: -3px 2px 3px aqua;
+    }
+
+    .btn12:hover {
+        box-shadow: 2px -3px 3px aqua
+    }
+
+    .btn6 {
+        color: black;
+    }
+
+    .clnts {
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="container" style="max-width: 1430px;">
+        <div class="nav" style="margin-top: 15px;">
+            <div class="left_nav" style="display: flex;">
+                <div style="margin-right: 20px;margin-left: 20px;">
+                    <h5 style="font-weight: bold;font-size:xx-large;" id="h5">Sagar</h5>
+                </div>
+                <!-- <button id="btn1">Fbhgsybj</button> -->
+                <div class="toggle-btn btnTog" id="btn">
+                    <span id="btndark" style="color: white;">Light</span>
+                    <img src="./images/sun.png" id="icon" style="background-color: orange;">
+                </div>
+                <!-- <input type="checkbox" class="checkbox" id="checkbox">
+  <label for="checkbox" class="checkbox-label">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+    <span class="ball"></span>
+  </label>
+</div> -->
+                <!-- <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                </div> -->
+            </div>
+            <div class="right_nav" style="display: flex;justify-content: space-between;">
+                <div style="align-items: center;display: flex;align-items: center;">
+                    <ul style="display:flex;list-style-type: none;">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#int">Interested</a></li>
+                        <li><a href="#port">Portfolio</a></li>
+                        <li><a href="#edu">Education</a></li>
+                    </ul>
+                </div>
+                <div style="margin-left: 180px;margin-right: 40px;">
+                    <a href="#contactp"><button id="contact">Contact</button></a>
+                </div>
+            </div>
+        </div>
+        <section class="home" style="display: flex; margin: 0;padding: 0;margin-top: 5%;">
+            <div class="left col-7" style="padding: 2%;">
+                <div style="margin-top: 10%;">
+                    <h1 style="font-weight: bolder;">Hey! I Am</h1>
+                </div>
+                <div style="color: orange;">
+                    <h1 style="font-weight: 900;">Sagar Sharma</h1>
+                </div>
+                <div style="margin-bottom: 5%;">
+                    <span style="font-size: medium;">Frontend Developer with high level of experience in web designing
+                        and development ,producing the quality work.</span>
+                </div>
+                <div>
+                    <a href="#"><button id="btn3">Hire me</button></a>
+                </div>
+            </div>
+            <div class="right col-5"
+                style="align-items: center;display: flex;justify-content: center;position: relative;">
+                <div style="display: flex;justify-content: center;margin-top: 10%;margin-bottom: 10%;" width="300"
+                    height="300">
+                    <img src="./images/profile1.jpg" alt="" class="image">
+                </div>
+                <div style="position: absolute;bottom: 0;left: 0;" data-aos="fade-left" data-aos-duration="2000">
+                    <button id="badge"
+                        style="padding: 1%;border-radius: 20px; background-color: white;align-items: center;display: flex;box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);border: transparent;">
+                        <i class="fa-solid fa-thumbs-up" style="margin-right: 10px;margin-left: 10%;color: orange;"></i>
+                        <span style="font-size: medium;">Best Design Award</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="icn">
+                <ul class="icon_list">
+                    <li><a href="https://github.com/Sagar-Sharma123"><i class="fa-brands fa-github fa-2x"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/sagar-sharma-74264424a/"><i
+                                class="fa-brands fa-linkedin-in fa-2x"></i></a></li>
+                    <li><a href="https://www.instagram.com/sagarsharma2010/?next=%2F"><i
+                                class="fa-brands fa-instagram fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="container-fluid" id="services">
+            <div>
+                <div style="margin-top: 2%;">
+                    <h1 style="font-weight: bolder;">My Awesome</h1>
+                </div>
+                <div style="color: orange;">
+                    <h1 style="font-weight: 900;">services</h1>
+                </div>
+                <div><span style="font-size: medium;">Lorem ipsum dolor sit amet consectetur adipisi Lorem ipsum dolor
+                        sit amet consectetur <br>
+                        adipisicing elit. Distinctio, quasi!</span></div>
+                <button class="Cv" id="cv">Download CV</button>
+            </div>
+
+            <div class="box3">
+                <div class="box2" data-aos="fade-right" data-aos-duration="2000"
+                    style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15)">
+                    <img src="./images/face1.jpg" class="face_img">
+                    <p style="font-size: medium;">HTML5,CSS3,<br>Javscript,ReactJs,<br>Nodejs,ExpressJs,<br>Mongodb</p>
+                </div>
+                <button class="learn" data-aos="fade-left" data-aos-duration="2000">LEARN MORE</button>
+            </div>
+
+            <div class="box4">
+                <div class="box2" data-aos="fade-left" data-aos-duration="2000"
+                    style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15)">
+                    <img src="./images/face1.jpg" class="face_img">
+                    <p style="font-size: medium;">HTML5,CSS3,<br>Javscript,ReactJs,<br>Nodejs,ExpressJs,<br>Mongodb</p>
+                </div>
+                <button class="learn" data-aos="fade-left" data-aos-duration="2000">LEARN MORE</button>
+            </div>
+
+            <div class="box5">
+                <div class="box2" data-aos="fade-left" data-aos-duration="2000"
+                    style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15)">
+                    <img src="./images/face1.jpg" class="face_img">
+                    <p style="font-size: medium;">HTML5,CSS3,<br>Javscript,ReactJs,<br>Nodejs,ExpressJs,<br>Mongodb</p>
+                </div>
+                <button class="learn" data-aos="fade-left" data-aos-duration="2000">LEARN MORE</button>
+            </div>
+
+        </section>
+
+        <section class="container-fluid text-white" id="main_container" style="margin-top: 100px;">
+            <div class="main">
+                <div>
+                    <span class="image3" id="cir" style="font-weight: bolder;">1+</span>
+                    <p class="experience" id="exp1">Years <br> <span style="color: orange;">Experience </span> </p>
+                </div>
+                <div>
+                    <span class="image3" id="cir2">10+</span>
+                    <p class="experience" id="exp2">Completed <br><span style="color: orange;"> Project </span> </p>
+                </div>
+                <div>
+                    <span class="image3" id="cir3">1+</span>
+                    <p class="experience" id="exp3">Companies <br> <span style="color: orange;"> work </span> </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container2" id="int">
+            <div class="inner_box">
+                <div style="margin-top: 2%;">
+                    <h1 style="font-weight: bolder;">I want to work for</h1>
+                </div>
+                <div style="color: orange;">
+                    <h1 style="font-weight: 900;">These brands</h1>
+                </div>
+                <div><span id="btn6" style="font-size: small;margin-top: 10px;">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. <br>Minus
+                        cupiditate quod earum ex at sit
+                        repellat consequuntur consectetur <br>dolore? Lorem ipsum dolor sit <br>elit. Officia, aliquam.
+                        Lorem ipsum dolor sit.</span></div>
+                <button class="hire" id="btn7">Hire Me</button>
+            </div>
+
+            <div class="inner_box">
+                <img src="./images/google.png" class="image1">
+            </div>
+        </section>
+
+        <section id="port">
+            <div class="container-fluid text-center" id="project" style="width:100%">
+                <h1 id="head" style="color:black;font-weight: bold;">Recent Projects</h1>
+
+                <h1 id="head" style="color:#fc9b1c;font-weight: bold;">Portfolio</h1>
+
+
+                <div id="cards" style="display: flex;">
+
+
+                    <div class="card card-style div1"
+                        style="background-color:#1c1b1c;border-color: wheat;position:relative">
+                        <div class="card-header">
+                            <h5 style="color: white;">Village Webside</h5>
+                        </div>
+                        <div class="card-body" style="color: white;">
+                            <p>
+                                An introductory website for my village Created using HTML, CSS,Bootstrap,jQuery and AJAX
+                            </p>
+                            <div class="btn btn12" style="color:black; border-radius:30px;">
+                                <button style="background-color:white; color:black; border-radius:20px;">view</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card card-style div1" style="background-color:#1c1b1c; border-color: wheat;">
+                        <div class="card-header">
+                            <h5 style="color:white">Village Webside</h5>
+                        </div>
+                        <div class="card-body" style="color:white">
+                            <p>
+                                An introductory website for my village Created using HTML, CSS,Bootstrap,jQuery and AJAX
+                            </p>
+                            <div class="btn btn12" style="color:black;  border-radius:30px;">
+                                <button style="background-color:white; color:black; border-radius:20px;">view</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card card-style div1" style="background-color:#1c1b1c; border-color: wheat;">
+                        <div class="card-header">
+                            <h5 style="color:white">Village Webside</h5>
+                        </div>
+                        <div class="card-body" style="color:white">
+                            <p>
+                                An introductory website for my village Created using HTML, CSS,Bootstrap,jQuery and AJAX
+                            </p>
+                            <div class="btn btn12" style="color:black;  border-radius:30px;">
+                                <button style="background-color:white; color:black; border-radius:20px;">view</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-style div1" style="background-color:#1c1b1c; border-color: wheat;">
+                        <div class="card-header">
+                            <h5 style="color:white">Village Webside</h5>
+                        </div>
+                        <div class="card-body" style="color:white">
+                            <p>
+                                An introductory website for my village Created using HTML, CSS,Bootstrap,jQuery and AJAX
+                            </p>
+                            <div class="btn btn12" style="color:black; border-radius:30px;">
+                                <button style="background-color:white; color:black; border-radius: 30px;">view</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="container1" id="edu">
+            <h2 class="clnts">Clients always get <span
+                    style="color:orange;font-size: 33px;font-weight: bold;">Exceptional Work </span>from me... </h2>
+            <div class="box" id="box">
+                <img src="./images/profile1.jpg" class="image2">
+                <h6>BTech From GLA University Mathura</h6>
+                <span style="color: white;">2021-2025</span><br>
+                <button class="visit">Visit</button>
+            </div>
+        </section>
+
+        <div class="bg-warning container-fluid" style="padding: 0;margin: 0;" id="contactp">
+
+
+            <div class="row br " style="background-color: black;">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4 mt-5">
+                    <h1 style="color:white;font-weight: bold;">Get in Touch</h1>
+                    <h1 style="color:#fc9b1c;font-weight: bold;">Contact me</h1>
+                </div>
+                <div class="col-sm-3 mt-4" style="align-items: center;display: flex;">
+                    <form>
+                        <input type="text" name="name" placeholder="Name"
+                            style="border:solid; border-color:#fc9b1c; border-radius: 5px; margin-top:20px;"><br>
+                        <input type="text" placeholder="Email"
+                            style="border:solid; border-color:#fc9b1c; border-radius: 5px; margin-top:20px;"><br>
+                        <textarea cols="22.5" placeholder="Message"
+                            style="border:solid; border-color:#fc9b1c; border-radius: 5px; margin-top:20px;"></textarea><br>
+                        <div style="display: flex; justify-content: center;">
+                            <button type="button" class="btn btn-warning m-5 mt-3 text-center"
+                                style="color: white; border-radius: 20px; box-shadow: 0 50px 30px rgba(255, 165, 0, 0.3);">Send</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+
+
+
+
+            <footer class="footer bg-warning text-white text-center py-4">
+                <p class="email mb-3">Sagar@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://github.com/Sagar-Sharma123" target="_blank" class="social-icon"><i
+                            class="fab fa-github fa-1x"></i></a>
+                    <a href="https://www.linkedin.com/in/sagar-sharma-74264424a/" target="_blank" class="social-icon"><i
+                            class="fab fa-linkedin fa-1x"></i></a>
+                    <a href="https://www.instagram.com/sagarsharma2010/?next=%2F" target="_blank" class="social-icon"><i
+                            class="fab fa-instagram fa-1x"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let btn = document.getElementById("btn");
+        let btndark = document.getElementById("btndark");
+        let icon = document.getElementById("icon");
+        let yearExp = document.getElementById("exp1");
+        let yearExp2 = document.getElementById("exp2");
+        let yearExp3 = document.getElementById("exp3");
+        let circle = document.getElementById("cir");
+        let circle2 = document.getElementById("cir2");
+        let circle3 = document.getElementById("cir3");
+        let head = document.getElementById("head");
+        let h5 = document.getElementById("h5");
+        let cont = document.getElementById("contact");
+        let btn3 = document.getElementById("btn3");
+        let badge = document.getElementById("badge");
+        let cv = document.getElementById("cv");
+        let btn6 = document.getElementById("btn6");
+        let btn7 = document.getElementById("btn7");
+        let box = document.getElementById("box");
+
+        btn.onclick = function () {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                icon.src = "images/moon.png";
+                yearExp.style.color = '#FFFFFF';
+                yearExp2.style.color = '#FFFFFF';
+                yearExp3.style.color = '#FFFFFF';
+                circle.style.backgroundColor = '#ffffff';
+                circle2.style.backgroundColor = '#ffffff';
+                circle3.style.backgroundColor = '#ffffff';
+                head.style.color = '#ffffff';
+                h5.style.color = '#ffffff';
+                btn6.style.color = '#c5c5c5';
+                box.style.borderColor = '#f5f5f5';
+                box.style.backgroundColor = '#333';
+                btn.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+                cont.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+                btn3.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+                badge.style.boxShadow = '0 50px 30px rgba(255, 255, 255, 0.3)';
+                cv.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+                btn7.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+                // <i class="fa-solid fa-sun"></i>
+                btndark.innerHTML = "Dark";
+            }
+            else {
+                document.body.classList.remove('dark-mode');
+                // document.body.classList.add("light-mode");
+                icon.src = "images/sun.png";
+                yearExp.style.color = '#000000';
+                yearExp2.style.color = '#000000';
+                yearExp3.style.color = '#000000';
+                circle.style.backgroundColor = '#000000';
+                circle2.style.backgroundColor = '#000000';
+                circle3.style.backgroundColor = '#000000';
+                head.style.color = '#000000';
+                h5.style.color = 'orange';
+                btn6.style.color = '#000000';
+                box.style.borderColor = '#ffa500';
+                box.style.backgroundColor = 'black';
+                btn.style.boxShadow = '0 0 5px 5px rgba(0, 0, 0, 0.15)';
+                cont.style.boxShadow = '0 0 5px 5px rgba(0, 0, 0, 0.15)';
+                btn3.style.boxShadow = '0 0 5px 5px rgba(0, 0, 0, 0.15)';
+                badge.style.boxShadow = '0 0 5px 5px rgba(0, 0, 0, 0.15)';
+                cv.style.boxShadow = '0 0 5px 5px rgba(0, 0, 0, 0.15)';
+                btn.style.boxShadow = '0 0 5px 5px rgba(0, 0, 0, 0.15)'
+                // <i class="fa-solid fa-moon"></i>
+                btndark.innerHTML = "Light";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.toggle("dark-mode");
+            icon.src = "images/moon.png";
+            yearExp.style.color = '#FFFFFF';
+            yearExp2.style.color = '#FFFFFF';
+            yearExp3.style.color = '#FFFFFF';
+            circle.style.backgroundColor = '#ffffff';
+            circle2.style.backgroundColor = '#ffffff';
+            circle3.style.backgroundColor = '#ffffff';
+            head.style.color = '#ffffff';
+            h5.style.color = '#ffffff';
+            btn6.style.color = '#c5c5c5';
+            box.style.borderColor = '#f5f5f5';
+            box.style.backgroundColor = '#333';
+            btn.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+            cont.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+            btn3.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+            badge.style.boxShadow = '0 50px 30px rgba(255, 255, 255, 0.3)';
+            cv.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+            btn7.style.boxShadow = '0 50px 30px rgba(255, 165, 0, 0.3)';
+            // <i class="fa-solid fa-sun"></i>
+            btndark.innerHTML = "Dark";
+        });
+
+
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
